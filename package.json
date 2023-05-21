@@ -1,0 +1,35 @@
+{
+  "name": "gcp-pubsub-republish",
+  "version": "1.0.0",
+  "description": "A script for republishing GCP Pub/Sub subscription messages to topics, made with the motivation of simplifying republishing deadletter queue messages",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirrodgepodge/gcp-pubsub-republish.git"
+  },
+  "keywords": [
+    "gcp",
+    "gcp",
+    "pub/sub",
+    "dlq",
+    "deadletter",
+    "queue",
+    "republish",
+    "subscription",
+    "republish",
+    "dlq",
+    "republish",
+    "deadletter",
+    "queue",
+    "republish"
+  ],
+  "author": "sirrodgepodge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sirrodgepodge/gcp-pubsub-republish/issues"
+  },
+  "homepage": "https://github.com/sirrodgepodge/gcp-pubsub-republish#readme",
+  "dependencies": {
+    "@google-cloud/pubsub": "^3.6.0"
+  }
+}
