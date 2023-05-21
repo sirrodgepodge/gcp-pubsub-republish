@@ -66,11 +66,6 @@ async function pullFromSubscriptionAndProcess(
 }
 
 async function publishToTopic(topicName: string, message: Message) {
-    const {
-        // eslint-disable-next-line unused-imports/no-unused-vars
-        publishTime, // remove previous publish time
-        ...messageProperties
-    } = message;
-
-    return await pubSubClient.topic(topicName).publishMessage(messageProperties);
+    const { id, data, attributes } = message;
+    await getPubSub().topic(topicName).publishMessage({ messageId: id, attributes, data });
 }
