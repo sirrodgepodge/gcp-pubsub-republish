@@ -1,7 +1,7 @@
 {
   "name": "gcp-pubsub-republish",
   "version": "1.0.0",
-  "description": "A script for republishing GCP Pub/Sub subscription messages to topics, made with the motivation of simplifying republishing deadletter queue messages",
+  "description": "A script for republishing GCP Pub/Sub subscription messages to topics, made with the motivation of simplifying the replay of deadletter queue (DLQ) messages",
   "main": "index.ts",
   "repository": {
     "type": "git",
