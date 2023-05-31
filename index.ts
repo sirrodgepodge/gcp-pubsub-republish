@@ -65,7 +65,19 @@ async function pullFromSubscriptionAndProcess(
     }
 }
 
+// ensure processing messages happens one at a time per topic, otherwise we hit a rate limit with GCP
+const promiseQueueMap = new Map<string, Promise<void>>();
 async function publishToTopic(topicName: string, message: Message) {
+    if (!promiseQueueMap.has(topicName)) {
+        promiseQueueMap.set(topicName, Promise.resolve());
+    }
+
     const { id, data, attributes } = message;
-    await getPubSub().topic(topicName).publishMessage({ messageId: id, attributes, data });
+
+    const appendedPromise = promiseQueueMap.get(topicName)!.then(async () => {
+        await getPubSub().topic(topicName).publishMessage({ messageId: id, attributes, data });
+    });
+    promiseQueueMap.set(topicName, appendedPromise);
+
+    await appendedPromise;
 }
