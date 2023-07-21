@@ -8,3 +8,9 @@ Note: You will need to ensure that you have needed permissions, specifically not
 3) "Pub/Sub Publisher" permissions to your main topic
 this will be done using the UI depicted below:
 ![Screenshot 2023-05-21 at 4 45 31 PM](https://github.com/sirrodgepodge/gcp-pubsub-republish/assets/7177292/f4c39570-3631-40fc-bd6a-d8432537f8f9)
+
+# Community implementations of this code.
+
+- [Pubsub Deadletter Republisher](https://github.com/jgunnink/pubsub-deadletter-republisher)
+  - This repository provides the tools for deploying a cloud function which implements the typescript code here that handles the republishing.
+  - You can use this repo to deploy the code as a cloud function in your own GCP projects.
